@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka-server # 指定应用名称
+
+server:
+  port: 1919 #被本配置文件其他地方使用
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+      #defaultZone: http://192.168.1.106:${server.port}/eureka/

@@ -1,0 +1,14 @@
+#打包jar
+mvn clean install
+
+
+#创建镜像
+docker build -t zuul .
+
+#启动容器
+docker run -p 1145:1145  --net host  zuul
+
+#docker run -d -P --net host -v 持久化地址:持久化地址 -t 镜像名称
+
+
+docker run  -P --net host -v

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: zuul
+  cloud:
+    inetutils:
+      preferred-networks:
+      - 10.0   # 设置注册到Eureka中心的优选服务地址
+
+
+server:
+  port: 1145
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1919/eureka/
+      #defaultZone: http://192.168.1.106:1919/eureka/
+
+
+zuul:
+  routes:
+    eurekaclient: #zuul唯一id
+      path: /eurekaclient/** #次端口下的路径映射
+      service-id: eurekaclient #eureka唯一id 要与eureka界面上的一一对应
+    ms-hello: #zuul唯一id
+      path: /ms-hello/** #次端口下的路径映射
+      service-id: ms-hello #eureka唯一id 要与eureka界面上的一一对应

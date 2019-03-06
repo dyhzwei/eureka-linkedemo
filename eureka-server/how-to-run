@@ -1,0 +1,6 @@
+#创建镜像
+docker build -t eureka-server .
+
+#启动容器
+docker run -p  1919:1919 --net host eureka-server
+

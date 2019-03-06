@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      #后面的eureka好像三必须的。  <-对，就是必须的
+      defaultZone: http://localhost:1919/eureka/
+
+    instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: ms-user
+
+
+server:
+  port : 5002
+
+
+HELLOSERVICEURL: http://ms-hello/
+

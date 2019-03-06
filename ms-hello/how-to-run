@@ -1,0 +1,9 @@
+#打包jar
+mvn clean install
+
+
+#创建镜像
+docker build -t ms-hello .
+
+#启动容器
+docker run -p  5001:5001 --net host ms-hello
